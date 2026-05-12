@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Bath, Scissors, PawPrint, Ear, MapPin, Phone, Clock, Heart } from "lucide-react";
+import { Bath, Scissors, PawPrint, Ear, MapPin, Phone, Clock, Heart, Instagram, MessageCircle } from "lucide-react";
 import heroDog from "@/assets/hero-dog.jpg";
 
 export const Route = createFileRoute("/")({
@@ -149,16 +149,24 @@ function Index() {
                   Te esperamos para darle a tu mascota la experiencia que se merece.
                 </p>
                 <ul className="mt-8 space-y-5">
-                  <li className="flex gap-4">
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-card shadow-[var(--shadow-card)]">
-                      <MapPin className="h-5 w-5 text-primary" />
-                    </span>
-                    <div>
-                      <p className="font-semibold">Dirección</p>
-                      <p className="text-sm text-muted-foreground">
-                        Pasaje Manuel Cortez 2056, Las Lomas de San Ramón, Chile
-                      </p>
-                    </div>
+                  <li>
+                    <a
+                      href="https://maps.app.goo.gl/R1761ukQLvDq37j97"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex gap-4 rounded-2xl bg-card p-4 shadow-[var(--shadow-card)] transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft)]"
+                    >
+                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-secondary">
+                        <MapPin className="h-5 w-5 text-primary" />
+                      </span>
+                      <div>
+                        <p className="font-semibold">Dirección</p>
+                        <p className="text-sm text-muted-foreground">
+                          Pasaje Manuel Cortez 2056, Las Lomas de San Ramón, Chile
+                        </p>
+                        <p className="mt-1 text-xs font-semibold text-primary">Ver en Google Maps →</p>
+                      </div>
+                    </a>
                   </li>
                   <li className="flex gap-4">
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-card shadow-[var(--shadow-card)]">
@@ -171,6 +179,22 @@ function Index() {
                         className="text-sm text-muted-foreground hover:text-primary"
                       >
                         +56 9 9805 0912
+                      </a>
+                    </div>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-card shadow-[var(--shadow-card)]">
+                      <Instagram className="h-5 w-5 text-primary" />
+                    </span>
+                    <div>
+                      <p className="font-semibold">Instagram</p>
+                      <a
+                        href="https://instagram.com/queen.peludis"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-sm text-muted-foreground hover:text-primary"
+                      >
+                        @queen.peludis
                       </a>
                     </div>
                   </li>
@@ -201,6 +225,18 @@ function Index() {
                 </a>
               </div>
             </div>
+            <div className="mt-10 overflow-hidden rounded-3xl shadow-[var(--shadow-card)]">
+              <iframe
+                title="Ubicación Queen Peludis en Google Maps"
+                src="https://www.google.com/maps?q=Pasaje+Manuel+Cortez+2056,+Las+Lomas+de+San+Ramón,+Chile&output=embed"
+                width="100%"
+                height="360"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -214,6 +250,17 @@ function Index() {
           <p>© {new Date().getFullYear()} Todos los derechos reservados.</p>
         </div>
       </footer>
+
+      {/* Floating WhatsApp button */}
+      <a
+        href="https://wa.me/56998050912"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Escríbenos por WhatsApp"
+        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[var(--shadow-soft)] transition hover:scale-110"
+      >
+        <MessageCircle className="h-7 w-7" />
+      </a>
     </div>
   );
 }
